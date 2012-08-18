@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset={dede:global.cfg_soft_lang/}" />
+<title>搜索页_{dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:field name='keywords'/}" />
+<meta name="description" content="{dede:field name='description' function='html2text(@me)'/}" />
+<link href="{dede:global.cfg_templets_skin/}/style/main.css" rel="stylesheet" media="screen" type="text/css" />
+<script language="javascript" type="text/javascript" src="{dede:global.cfg_cmspath/}/images/js/j.js" ></script>
+<script type="text/javascript" src="{dede:global.cfg_templets_skin/}/js/jquery.lazyload.js"></script>
+<script type="text/javascript">
+jQuery(document).ready(
+function($){
+$("img").lazyload({
+     placeholder : "{dede:global.cfg_templets_skin/}/images/grey.gif",
+     effect      : "fadeIn"
+});
+$("#searchKeyWord").val("{dede:global name='keyword' function='RemoveXSS(@me)'/}");
+});
+
+</script>
+</head>
+<body>
+{dede:include filename="head.htm"/}
+<!-- /header -->
+<div id="main">
+<div class="box">
+<div class="c15">
+<p class="pnav">
+	当前位置:：<a href="{dede:global.cfg_cmsurl/}/">主页</a> &gt; 搜索页 &gt; {dede:global name='keyword' function='RemoveXSS(@me)'/}
+</p>
+<h2>搜索 {dede:global name='keyword' function='RemoveXSS(@me)'/} 的文章列表</h2>
+	<ul class="r_list">
+{dede:list orderby='sortrank' pagesize='10'}
+				 <li>
+      				<div class="ib">[field:array runphp='yes']@me = (empty(@me['litpic']) ? "" : "<a href='{@me['arcurl']}' class='preview' target='_blank' ><img src='{@me['litpic']}' width='98' height='98'/></a>"); [/field:array]
+					</div>
+					<h4><a href="[field:arcurl/]" class="title" target="_blank">[field:title/]</a></h4>
+					<p class="s2">　
+						[field:description/]...
+					</p>
+					<p><a href="[field:arcurl/]" target="_blank" class="s3">【浏览全文】</a></p>
+				</li>
+{/dede:list}
+	</ul>
+<div class="pnum">
+<ul>
+	 {dede:pagelist listitem="index,end,pre,next,pageno" listsize="10"/}  
+	 </ul>
+</div>
+
+</div>
+
+<div class="c2">
+<div class="c16box">
+<script>
+var num = 4;
+var list_keyword = "减肥";
+</script>
+<script language="javascript" type="text/javascript" src="http://www.jimeishuo.com/mall/js/list.js"></script>
+</div>
+</div>
+</div>
+</div>
+
+{dede:include filename="footer.htm"/}
+</body></html>
+

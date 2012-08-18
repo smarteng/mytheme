@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset={dede:global.cfg_soft_lang/}" />
+<title>{dede:field.title/}_{dede:global.cfg_webname/}</title>
+<meta name="description" content="{dede:field.description/}" />
+<meta name="keywords" content="{dede:field.keywords/}  " />
+<link href="{dede:global.cfg_templets_skin/}/style/main.css" rel="stylesheet" media="screen" type="text/css" />
+</head>
+<body>
+{dede:include filename="head.htm"/}
+<div id="main">
+<div class="box">
+
+<div class="c700">
+<div class="c15">
+<p class="pnav">当前位置：{dede:field name='position'/} 文章内容</p>
+<div class="con_box">
+<h1>{dede:field.title/}</h1>
+<h5 class="sub_title"><span>发布: {dede:field.pubdate function=MyDate('Y-m-d',@me)/}　  | 
+来源:{dede:field.source/} | 编辑:{dede:field.writer/}   | 查看: <script src="{dede:field name='phpurl'/}/count.php?view=yes&aid={dede:field name='id'/}&mid={dede:field name='mid'/}" type='text/javascript' language="javascript"></script> </span></h5>
+<div class="content" id="conbox">
+<div class="atipreview"> 导读：{dede:field.description/}</div>
+{dede:field.body/}
+</div>
+<div class="con_kw">
+<strong>关键词:</strong> 
+{dede:tag sort='new' getall='0'}
+	<a href='[field:link/]'>[field:tag /]</a>
+{/dede:tag}           
+</div>
+<div class="con_kw">
+<!-- JiaThis Button BEGIN -->
+<div id="ckepop">
+	<span class="jiathis_txt">分享到：</span>
+	<a class="jiathis_button_qzone">QQ空间</a>
+	<a class="jiathis_button_tsina">新浪微博</a>
+	<a class="jiathis_button_renren">人人网</a>
+	<a class="jiathis_button_kaixin001">开心网</a>
+	<a href="http://www.jiathis.com/share/?uid=903381" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+	<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript">var jiathis_config = {data_track_clickback:true};</script>
+<script type="text/javascript" src="http://v2.jiathis.com/code/jia.js?uid=903381" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+</div>
+<div class="clear"></div>
+<ul  class="sq">
+<li class="pre">{dede:prenext get='pre'/}</li>
+<li class="next">{dede:prenext get='next'/}</li>
+</ul>
+</div>
+</div>
+<div>
+<script>
+var scroll_keyword = "减肥";
+</script>
+<script language="javascript" type="text/javascript" src="http://www.jimeishuo.com/mall/js/scroll.js"></script>
+</div>
+
+<div class="c18">
+
+<div class="c6">
+<h4>相关文章</h4>
+<ul class="g_list">
+{dede:likearticle col='1' row='8' titlelen='28'}
+<li><a href="[field:arcurl/]" title="[field:title function='html2text(@me)'/]" target="_blank">[field:title/] &nbsp;([field:pubdate function=MyDate('Y-m-d',@me)/])</a></li>
+ {/dede:likearticle} 
+</ul>
+</div>
+<div class="c6">
+<h4>精彩推荐</h4>
+<ul class="g_list">
+{dede:arclist flag='c' limit='1,5' titlelen="30"}
+ <li><a href="[field:arcurl/]" target="_blank" title="[field:title function='html2text(@me)'/]" target="_blank">[field:title/] &nbsp;([field:pubdate function=MyDate('Y-m-d',@me)/])</a></li>
+{/dede:arclist}
+</ul>
+</div>
+
+</div>					
+</div>
+
+<div class="c2">
+
+<div class="c16box">
+<script language="javascript" type="text/javascript" src="http://www.jimeishuo.com/mall/js/slider.js"></script>
+</div>
+
+<div class="c16box">
+<h3 class="a_title"><span>热门排行榜</span></h3>
+<p class="a_more">本周TOP10</p>
+<div class="tab_box c2_tab">
+<div class="tab_content">
+<div class="tab_con  show">
+<div class="a_info">
+{dede:arclist orderby='click' limit='0,1' titlelen="20" infolen="70" imgwidth='80' imgheight='80'}
+<div class="ib">
+ <a href="[field:arcurl/]" target="_blank" alt="[field:title function='html2text(@me)'/]">[field:image/]</a>
+</div>
+<h4><a href="[field:arcurl/]" target="_blank">[field:title/]</a></h4>
+<p>[field:info/]...<a href="[field:arcurl/]" title="[field:title function='html2text(@me)'/]" target="_blank" class="s3">【查看详细】</a></p>
+{/dede:arclist}
+ </div>
+<ul class="e_list">
+{dede:arclist orderby='click' limit='1,10' titlelen="36"}
+   <li><a href="[field:arcurl/]" target="_blank" title="[field:title function='html2text(@me)'/]" target="_blank">[field:title/]</a></li>
+{/dede:arclist}
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div class="c16box">
+<script>
+var slider_keyword = '减肥';
+</script>
+<script language="javascript" type="text/javascript" src="http://www.jimeishuo.com/mall/js/slider.js"></script>
+</div>
+
+<div class="c16box">
+<h3 class="a_title"><span>最新文章</span></h3>
+<div class="tab_box c2_tab">
+<div class="tab_content">
+<div class="tab_con  show">
+<div class="a_info">
+{dede:arclist flag='a' orderby='pubdate' limit='0,1' titlelen="12"  imgwidth='78' imgheight='78'}
+<div class="ib">
+<a href="[field:arcurl/]" title="[field:title function='html2text(@me)'/]" target="_blank">[field:image/]</a>
+</div>
+<h4><a href="[field:arcurl/]" title="[field:title function='html2text(@me)'/]" target="_blank">[field:title/]</a></h4>
+<p>[field:info/]...<a href="[field:arcurl/]" title="[field:title/]" target="_blank" class="s3">【查看详细】</a></p>
+{/dede:arclist}                  
+</div>
+<ul class="e_list">
+{dede:arclist orderby='pubdate' limit='1,10'  titlelen="36" }
+<li><a href="[field:arcurl/]" title="[field:title function='html2text(@me)'/]" target="_blank">[field:title/]</a></li>
+{/dede:arclist}
+ </ul>
+</div>
+</div>
+</div>
+</div>
+
+<div class="c16box">
+<script>
+var slider_keyword = '韩都衣舍';
+</script>
+<script language="javascript" type="text/javascript" src="http://www.jimeishuo.com/mall/js/slider.js"></script>
+</div>
+
+<div class="c16box">
+<h3 class="a_title"><span>随机文章</span></h3>
+<div class="sw" style="display:block"></div>
+<ul class="s_list">
+{dede:arclist orderby='rand' limit='0,10'  titlelen="36"}
+<li><a href="[field:arcurl/]" title="[field:title function='html2text(@me)'/]" target="_blank">[field:title/]</a></li>
+{/dede:arclist}
+</ul>
+</div>
+
+</div>
+
+
+</div>
+</div>
+
+{dede:include filename="footer.htm"/}
+</body>
+</html>
